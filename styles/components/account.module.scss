@@ -1,0 +1,110 @@
+.account {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    animation: ping 1s 1 cubic-bezier(0.61, 1, 0.88, 1) forwards;
+    @keyframes ping {
+        from {
+            filter: sepia(.5);
+        }
+        to {
+            filter: sepia(0);
+        }
+    }
+
+    &:nth-child(odd) {
+        background-color: var(--background-a);
+    }
+
+    &:nth-child(even) {
+        background-color: var(--background-c);
+    }
+
+    & td {
+        padding: 1.25rem;
+        text-align: center;
+        overflow: hidden;
+
+        &:nth-child(3) {
+
+            & .yes {
+                color: var(--inr-cyan);
+            }
+
+            & .no {
+                color: var(--inr-red);
+            }
+        }
+
+        & span {
+            color: var(--text-f);
+
+            & a {
+                text-decoration: none;
+                color: var(--text-f);
+            }
+
+            &.inlineHeader {
+                text-transform: capitalize;
+                color: var(--text-f);
+                display: none;
+            }
+
+            & .icon{
+                margin-right: .5rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        align-items: center;
+        justify-items: flex-start;
+
+/*         &:nth-child(odd),
+        &:nth-child(even) {
+            background-color: var(--background-c);
+        } */
+
+        & td {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem;
+            text-align: left;
+
+            &:first-child {
+                display: none;
+            }
+
+            &:nth-child(2) * {
+                color: var(--text-e);
+                font-weight: 700;
+            }
+
+            &:nth-child(odd) {
+                background-color: var(--background-a);
+            }
+
+            &:nth-child(even) {
+                background-color: var(--background-c);
+            }
+
+            & span:last-child {
+                color: var(--text-e);
+                font-weight: 700;
+            }
+
+            & span.inlineHeader {
+                display: inline;
+            }
+        }
+    }
+}

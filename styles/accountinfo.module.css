@@ -1,0 +1,124 @@
+#title {
+	margin: 1.875rem 0;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--text-e);
+	text-transform: capitalize;
+}
+
+#hardware.section {
+	background-color: var(--background-c);
+	padding: 1.875rem 3.125rem;
+	height: 100%;
+	padding: 1rem;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#hardware.section>div:nth-child(3) {
+	margin-top: 1.875rem;
+	margin-bottom: 1.875rem;
+}
+
+#hardware.section #block {
+	margin-right: 1.25rem;
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--text-c);
+	text-transform: lowercase;
+}
+
+#hardware.section .resource {
+	display: flex;
+	align-items: center;
+}
+
+#hardware.section .resource span {
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--text-e);
+	text-transform: uppercase;
+}
+
+#hardware.section label,
+#hardware.section meter {
+	width: 100%;
+}
+
+#hardware.section label {
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--text-e);
+	font-variant: small-caps;
+	word-break: break-all;
+}
+
+#hardware.section meter {
+	border-radius: 100px;
+	background: var(--background-b);
+	padding: 2px;
+	width: 100%;
+	height: 8px;
+	border-radius: 100px;
+}
+
+#hardware.section meter::-webkit-meter-bar {
+	padding: 2px;
+	width: 100%;
+	height: 8px;
+	border-radius: 100px;
+	background: transparent;
+	outline: none;
+	border: none;
+}
+
+#hardware.section ::-moz-meter-bar,
+#hardware.section meter::-webkit-meter-optimum-value {
+	border-radius: 100px;
+	background: linear-gradient(to right, #0ac1ed, #57ffff);
+}
+
+#balance.section {
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 1.25em;
+}
+
+#balance div {
+	display: flex;
+	flex-direction: column;
+	place-content: center;
+	background-color: var(--background-c);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#balance div:first-child {
+	padding: 1.875rem 1.25rem;
+	font-size: 1rem;
+	color: var(--inr-white);
+	background-image: linear-gradient(97.69deg, #028d8f 0%, #02324f 100%);
+}
+
+#balance div:last-child {
+	padding: 1.875rem 1.25rem;
+	font-size: 1rem;
+	color: var(--text-e);
+	background-color: var(--background-c);
+}
+
+#balance div span:first-child {
+	margin-bottom: 1.875rem;
+	font-weight: 700;
+	text-align: left;
+}
+
+#balance div span:last-child {
+	text-align: right;
+}
+
+@media screen and (max-width: 767px) {
+	.shift {
+		margin-top: 5rem;
+	}
+}

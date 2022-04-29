@@ -1,0 +1,59 @@
+#loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-c);
+}
+
+#loader svg {
+    width: 100%;
+    height: 100%;
+    transform: scale(.25);
+    margin: auto;
+}
+
+#loader svg circle {
+    fill: none;
+	stroke: var(--inr-black);
+	transform-origin: center;
+}
+
+[data-theme=dark] #loader svg circle {
+	stroke: var(--inr-cyan);
+}
+
+#loader svg circle:first-child {
+    stroke-dasharray: 1;
+    stroke-width: 1;
+}
+
+#loader svg circle:nth-child(2) {
+    transform: rotateZ(-90deg);
+	stroke-dasharray: 270.18;
+    animation: load 2s cubic-bezier(0.45, 0, 0.55, 1) infinite forwards;
+    stroke-linecap: round;
+}
+
+#loader svg path {
+    transform: translate(12.5%, 12.5%) scale(0.5);
+    transform-origin: center;
+}
+
+@keyframes load {
+
+    from {
+        stroke-width: 8;
+        stroke-dashoffset: 0;
+    } 50% {
+        stroke-width: 1;
+    } to {
+        stroke-width: 8;
+        stroke-dashoffset: 540.36;
+    }
+}

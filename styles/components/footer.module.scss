@@ -1,0 +1,137 @@
+#footer {
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	/* background-color: var(--background-b); */
+}
+
+#footer .prop {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 50vw;
+	height: 50vw;
+	margin: 0 auto;
+	border-radius: 50%;
+	transform-origin: center;
+
+	[data-theme=dark] & {
+		visibility: hidden;
+	}
+}
+
+#footer #bgProp.prop {
+	bottom: 0;
+	background-color: var(--inr-glow-low);
+	filter: blur(150px);
+}
+
+#footer #archProp.prop {
+	bottom: 50%;
+	border: 1px solid var(--inr-dark-gray);
+}
+
+#footer #foreground {
+	position: relative;
+	padding: 2rem 0;
+}
+
+#footer #logo,
+#footer #links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#footer #logo {
+	flex-direction: column;
+}
+
+#footer #logo a {
+	text-transform: capitalize;
+	text-decoration: none;
+	color: var(--text-b);
+	font-size: .875em;
+}
+
+#footer #logo a svg {
+	margin: 1.5em .5em 0 0;
+}
+
+#footer #logo img {
+	height: 2.5rem;
+}
+
+#footer #links {
+	padding-left: 0;
+	margin: 0;
+}
+
+#footer #links li {
+	padding: 0 1rem;
+}
+
+#footer #links li a {
+	display: block;
+	text-decoration: none;
+	color: var(--inr-white);
+	font-size: 1.25rem;
+	text-transform: capitalize;
+}
+
+#footer #links li a:hover {
+	color: var(--inr-cyan);
+}
+
+#footer #social {
+	display: inline-block;
+	margin: 1rem 0;
+}
+
+#footer #social a {
+	display: inline-block;
+	margin: 0 0.5rem;
+	font-size: 1.5rem;
+	color: var(--inr-white);
+}
+
+#footer #social a:hover {
+	color: var(--inr-cyan);
+	cursor: pointer;
+}
+
+#footer #badgeBox {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transform: scale(.8);
+}
+
+#footer #badgeBox .badge {
+	width: fit-content;
+}
+
+#footer #badgeBox .badge:first-child img {
+	width: 150px;
+}
+
+#footer #badgeBox .badge:last-child {
+	width: 100%;
+}
+
+#footer #badgeBox .badge:last-child img {
+	width: 100%;
+}
+
+#footer #badgeBox .badge:last-child img {
+	margin: 6%;
+	width: 88%;
+}
+
+#footer .badge a {
+	position: relative;
+	display: block;
+}

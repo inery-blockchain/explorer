@@ -1,0 +1,29 @@
+#menu {
+	width: fit-content;
+}
+
+#loaderBox {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#scroll {
+	height: 70vh;
+	margin: 0 1rem;
+	overflow-y: auto;
+	border: 4px solid var(--inr-smoke);
+	scrollbar-color: var(--inr-light-gray) var(--inr-smoke);
+	background-color: var(--background-a);
+}
+
+#spreadsheet {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	justify-items: center;
+	gap: 4px;
+	width: 100%;
+	height: fit-content;
+	background-color: var(--background-a);
+}

@@ -1,0 +1,226 @@
+/* Layout */
+
+/* #layout {
+	position: relative;
+	z-index: 1;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	width: 100%;
+	min-height: 100vh;
+} */
+
+#bgProp {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	height: 99%;
+	animation: float 2.75s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+}
+
+@keyframes float {
+	from {
+		filter: drop-shadow(0 0 128px var(--inr-glow-high));
+		transform: translateY(0);
+	}
+	to {
+		filter: drop-shadow(0 0 64px var(--inr-glow-low));
+		transform: translateY(-2.75%);
+	}
+}
+
+@media screen and (max-width: 1399px) {
+	#main h1,
+	#main p,
+	#main span {
+		text-align: center;
+	}
+}
+
+/* 1. Header */
+
+#header {
+	max-width: 85%;
+	height: fit-content;
+	color: var(--inr-white);
+	text-transform: uppercase;
+	margin-top: 3.125rem;
+	margin-bottom: 6.25rem;
+}
+
+#header h1 a {
+	display: flex;
+	align-items: center;
+	font-size: 1.5rem;
+	margin: 0;
+	font-weight: 400;
+	text-decoration: none;
+	color: var(--inr-white);
+}
+
+#header h1 a img {
+	height: 1.5em;
+}
+
+#header h1 a span {
+	margin: 0 0 0 1rem;
+}
+
+@media screen and (max-width: 1399px) {
+
+	#header h1 a {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#header h1 a span {
+		margin: 1rem 0 0 0;
+	}
+}
+
+/* 2 Main Content Area */
+
+#main {
+	max-width: 85%;
+	height: fit-content;
+	color: var(--inr-white);
+}
+
+#main #clock {
+	display: none;
+	margin-bottom: 6.25rem;
+}
+
+@media screen and (max-width: 767px) {
+	#main #clock {
+		margin-bottom: 2.25rem;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	#main #clock {
+		margin-bottom: 4.25rem;
+	}
+}
+
+#main #clock > div {
+	display: inline-flex;
+	justify-content: flex-start;
+}
+
+@media screen and (max-width: 1399px) {
+	#main #clock > div {
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#main #clock > div {
+		transform: scale(0.6);
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	#main #clock > div {
+		transform: scale(0.7);
+	}
+}
+
+#main .card {
+	display: flex;
+	flex-direction: column;
+	place-content: center;
+	width: fit-content;
+	height: fit-content;
+}
+
+#main .card .counter {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 11.25rem;
+	height: 11.25rem;
+	border: 4px solid var(--inr-dark-gray);
+	border-radius: 50%;
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+#main .card .counter svg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+#main .card .counter svg circle {
+	fill: none;
+	stroke-width: 3;
+	stroke: var(--inr-counter-color);
+	stroke-dasharray: 270.18;
+	stroke-linecap: round;
+	transform: rotateZ(-90deg);
+	transform-origin: center;
+}
+
+#main .card > span {
+	font-size: 1.5rem;
+	margin-top: 0.833em;
+	margin-bottom: 0.833em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#main #title {
+	font-size: 4.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 1.25rem;
+}
+
+@media screen and (max-width: 767px) {
+	#main #title {
+		font-size: 2.5rem;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	#main #title {
+		font-size: 3.5rem;
+	}
+}
+
+#main #description {
+	font-size: 1.125rem;
+	margin: 0;
+}
+
+#main #description a {
+	display: inline-block;
+	text-decoration: none;
+	color: var(--inr-cyan);
+	margin: 1.25rem 0;
+}
+
+#main #social {
+	display: inline-block;
+	width: 100%;
+}
+
+#main #social a {
+	display: inline-block;
+	margin: 0 1rem 0 0;
+	font-size: 1.75rem;
+	color: var(--inr-white);
+}
+
+#main #social a:hover {
+	color: var(--inr-cyan);
+	cursor: pointer;
+}

@@ -1,0 +1,8 @@
+#layout {
+    position: 'relative';
+    background-color: var(--background-a);
+    padding: 5vh 0;
+}
+[data-theme=dark] #layout {
+    background-color: transparent;
+}

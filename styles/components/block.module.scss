@@ -1,0 +1,109 @@
+.block {
+    animation: ping 1s 1 cubic-bezier(0.61, 1, 0.88, 1) forwards;
+    @keyframes ping {
+        from {
+            filter: sepia(.5);
+        }
+        to {
+            filter: sepia(0);
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        align-items: center;
+        justify-items: flex-start;
+    }
+
+    & td {
+        text-align: center;
+        vertical-align: middle;
+        padding: .5rem;
+        @media screen and (max-width: 991px) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            & span {
+
+                &:first-child {
+                    color: var(--text-f);
+                }
+
+                &:last-child {
+                    color: var(--inr-dark-gray);
+                    font-weight: 700;
+                }
+            }
+        }
+
+        &:not(:nth-child(3)) {
+
+            & span {
+
+                text-transform: capitalize;
+            }
+        }
+
+        &:nth-child(3) {
+
+            & span {
+
+                &:first-child {
+
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+
+            & span {
+
+                &[data-status=confirmed] {
+                    color: var(--inr-cyan);
+                }
+
+                &[data-status=denied] {
+                    color: var(--inr-red);
+                }
+            }
+        }
+
+        & span {
+
+            &:first-child {
+                display: none;
+                @media screen and (max-width: 991px) {
+                    display: inline;
+                    color: var(--text-f);
+                }
+            }
+
+            &:last-child {
+                color: var(--text-f);
+
+                & a {
+                    text-decoration: none;
+                    color: var(--text-f);
+                }
+            }
+        }
+
+        &:last-child {
+            text-align: left;
+
+            & span {
+                &:last-child {
+                    text-align: left;
+                    word-break: break-all;
+                    overflow: hidden;
+                    font-size: .875em;
+                }
+            }
+        }
+    }
+}

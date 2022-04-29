@@ -1,0 +1,128 @@
+.trx {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    &:nth-child(odd) {
+        background-color: var(--background-c);
+    }
+
+    &:nth-child(even) {
+        background-color: var(--background-a);
+    }
+
+    & td {
+        padding: 1.25rem;
+        text-align: center;
+        overflow: hidden;
+
+        & span {
+            color: var(--text-f);
+            overflow: hidden;
+
+            & a {
+                text-decoration: none;
+                color: var(--text-f);
+            }
+
+            &.inlineHeader {
+                text-transform: capitalize;
+                color: var(--text-f);
+                display: none;
+            }
+
+            & .icon {
+                margin-right: .5rem;
+            }
+        }
+
+        &:nth-child(3) {
+
+            & span:last-child {
+                width: 100%;
+                display: block;
+                word-break: break-all;
+            }
+        }
+
+        &:last-child span {
+            display: block;
+            width: 100%;
+            color: var(--text-f);
+            text-align: left;
+
+            & pre {
+                text-align: left;
+                margin: 0;
+
+                & code {
+                    color: var(--inr-light-blue);
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            'a'
+            'b'
+            'c'
+            'd';
+        align-items: center;
+        justify-items: flex-start;
+
+        &:nth-child(odd),
+        &:nth-child(even) {
+            background-color: var(--background-c);
+        }
+
+        & td {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 1.25rem;
+            text-align: left;
+
+            &:nth-child(even) {
+                background-color: var(--background-a);
+            }
+
+            &:nth-child(odd) {
+                background-color: var(--background-c);
+            }
+
+            &:first-child {
+
+                & span:first-child {
+                    display: none;
+                }
+            }
+
+            & span {
+
+                &:first-child {
+                    margin-bottom: .5rem;
+                }
+
+                &:last-child {
+                    color: var(--text-e);
+                    font-weight: 700;
+                }
+
+                &.inlineHeader {
+                    display: inline;
+                }
+            }
+        }
+    }
+}
